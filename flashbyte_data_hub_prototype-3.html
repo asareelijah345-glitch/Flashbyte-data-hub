@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Flashbyte Data Hub | Ghana Data Reseller Platform</title>
+<style>
+:root{--navy:#10233f;--blue:#2457d6;--cyan:#16b8a6;--ink:#172033;--muted:#637087;--bg:#f4f7fb;--white:#fff;--line:#e4eaf3}
+*{box-sizing:border-box}body{margin:0;font-family:Arial,Helvetica,sans-serif;background:var(--bg);color:var(--ink);line-height:1.5}
+header{background:var(--navy);color:white;padding:16px 5%;display:flex;justify-content:space-between;align-items:center;gap:18px;flex-wrap:wrap}
+.brand{font-size:1.2rem;font-weight:800;letter-spacing:.2px}.brand span{color:#62e4d5}
+nav a{color:#e7eefc;text-decoration:none;margin-left:18px;font-size:.94rem}
+.hero{padding:64px 5% 56px;background:linear-gradient(130deg,#10233f,#1d4382);color:white}
+.hero-inner{max-width:1120px;margin:auto;display:grid;grid-template-columns:1.35fr .8fr;gap:36px;align-items:center}
+.eyebrow{color:#72eadc;text-transform:uppercase;font-weight:700;letter-spacing:1.5px;font-size:.78rem}
+h1{font-size:clamp(2rem,5vw,3.7rem);line-height:1.08;margin:12px 0 18px}.hero p{color:#e0e8f8;max-width:650px}
+.btn{display:inline-block;border:0;border-radius:10px;padding:12px 17px;background:var(--cyan);color:#082a35;font-weight:800;text-decoration:none;cursor:pointer}
+.btn.secondary{background:white;color:var(--navy);margin-left:8px}
+.panel{background:white;color:var(--ink);border-radius:18px;padding:24px;box-shadow:0 18px 50px #07152b44}
+.panel h3{margin:0 0 12px}.network-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.network{border:1px solid var(--line);border-radius:12px;padding:14px;font-weight:700}.network small{display:block;color:var(--muted);font-weight:400;margin-top:3px}
+.container{max-width:1120px;margin:auto;padding:42px 5%}
+.section-head{max-width:700px;margin-bottom:22px}.section-head h2{font-size:1.8rem;margin:0 0 8px}.muted{color:var(--muted)}
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.card{background:white;border:1px solid var(--line);border-radius:16px;padding:22px}.card h3{margin-top:0}
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.step-num{display:inline-grid;place-items:center;width:34px;height:34px;border-radius:10px;background:#e4faf6;color:#087c71;font-weight:800}
+.form-wrap{display:grid;grid-template-columns:1fr 1fr;gap:22px}
+form{display:grid;gap:12px}label{font-weight:700;font-size:.9rem}input,select{width:100%;padding:12px;border:1px solid #cfd8e6;border-radius:9px;font:inherit;background:white}
+.notice{background:#fff8df;border:1px solid #f1dc8b;padding:14px;border-radius:12px;color:#624a00;font-size:.92rem}
+footer{background:var(--navy);color:#dce6f8;padding:26px 5%;text-align:center}
+@media(max-width:760px){.hero-inner,.cards,.steps,.form-wrap{grid-template-columns:1fr}.hero{padding-top:42px}nav a{margin:0 12px 0 0}.btn.secondary{margin:10px 0 0}}
+</style>
+</head>
+<body>
+<header>
+  <div class="brand">FLASHBYTE <span>DATA HUB</span></div>
+  <nav><a href="#networks">Networks</a><a href="#resellers">Resellers</a><a href="#register">Register</a></nav>
+</header>
+<section class="hero">
+  <div class="hero-inner">
+    <div>
+      <div class="eyebrow">Your Ghanaian data-selling platform</div>
+      <h1>Fast data. Smart selling. Shared growth.</h1>
+      <p>Welcome to Flashbyte Data Hub — a planned platform where customers can buy bundles and independent resellers can set their own selling prices above your base prices.</p>
+      <a class="btn" href="#register">Join as a reseller</a>
+      <a class="btn secondary" href="#networks">Explore networks</a>
+    </div>
+    <div class="panel">
+      <h3>Networks planned</h3>
+      <div class="network-grid">
+        <div class="network">MTN<small>Bundle catalogue to connect</small></div>
+        <div class="network">Telecel<small>Bundle catalogue to connect</small></div>
+        <div class="network">AT<small>Formerly AirtelTigo</small></div>
+        <div class="network">MTN Express<small>Supplier support to verify</small></div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="container" id="resellers">
+  <div class="section-head"><h2>A platform for every reseller</h2><p class="muted">Flashbyte Data Hub sets the base/wholesale price. Each reseller can choose a permitted selling price and track their own orders, sales, and estimated margin.</p></div>
+  <div class="cards">
+    <article class="card"><h3>🛒 Customer shop</h3><p class="muted">Choose a network and bundle, enter the recipient number, and review the order.</p></article>
+    <article class="card"><h3>📊 Reseller dashboard</h3><p class="muted">Manage your selling prices, view orders, and review sales and estimated margins.</p></article>
+    <article class="card"><h3>☎️ Main USSD code</h3><p class="muted">Planned: one main code with reseller IDs. A USSD provider agreement and technical integration are required.</p></article>
+  </div>
+</section>
+<section class="container" id="networks">
+  <div class="section-head"><h2>How it would work</h2><p class="muted">This is a design prototype. Live purchases require an approved data supplier and secure payment integration.</p></div>
+  <div class="steps">
+    <article class="card"><span class="step-num">1</span><h3>Register</h3><p class="muted">Customers and resellers get accounts with the right permissions.</p></article>
+    <article class="card"><span class="step-num">2</span><h3>Set your price</h3><p class="muted">Flashbyte sets base prices; resellers add their own markup within platform rules.</p></article>
+    <article class="card"><span class="step-num">3</span><h3>Deliver orders</h3><p class="muted">The connected supplier processes bundles and returns order status automatically.</p></article>
+  </div>
+</section>
+<section class="container" id="register">
+  <div class="section-head"><h2>Reseller registration preview</h2><p class="muted">Try the layout. This demo form does not save or send your details.</p></div>
+  <div class="form-wrap">
+    <div class="card">
+      <h3>Join Flashbyte Data Hub</h3>
+      <form onsubmit="event.preventDefault();document.getElementById('formmsg').textContent='Demo only: registration is not connected to a database yet.';">
+        <div><label for="fullname">Full name</label><input id="fullname" placeholder="Your name" required></div>
+        <div><label for="phone">Phone number</label><input id="phone" type="tel" placeholder="e.g. 0XX XXX XXXX" required></div>
+        <div><label for="role">Account type</label><select id="role"><option>Reseller</option><option>Customer</option></select></div>
+        <button class="btn" type="submit">Preview registration</button>
+        <p id="formmsg" class="muted" aria-live="polite"></p>
+      </form>
+    </div>
+    <div class="card">
+      <h3>Before launch</h3>
+      <div class="notice">Please don't enter real personal details or payment information here. This prototype has no database, secure login, payment processing, data-delivery API, or live USSD connection.</div>
+      <p class="muted">Next: confirm supplier/API access, reseller pricing rules, payment fees, privacy and security requirements, and USSD costs.</p>
+    </div>
+  </div>
+</section>
+<footer><strong>FLASHBYTE DATA HUB</strong><br><small>Website concept • Ghana • Prototype only</small></footer>
+</body>
+</html>
