@@ -278,5 +278,106 @@ document.getElementById("logout-button")
     console.error("Dashboard error:", error.message);  
   }  
 })();  
-</script>  </body>  
+</script> 
+<!-- FLASHBYTE ADMIN DASHBOARD -->
+<section id="admin-dashboard" class="section" hidden>
+  <div class="container">
+    <h2>Flashbyte Admin Dashboard</h2>
+    <p>Welcome, Administrator!</p>
+
+    <div class="card">
+      <h3>Reseller Management</h3>
+      <button class="btn" id="load-resellers" type="button">
+        View Registered Resellers
+      </button>
+      <p id="admin-message" aria-live="polite"></p>
+      <div id="reseller-list"></div>
+    </div>
+  </div>
+</section>
+
+<script>
+(async function () {
+  const section = document.getElementById("admin-dashboard");
+  const message = document.getElementById("admin-message");
+  const button = document.getElementById("load-resellers");
+  const list = document.getElementById("reseller-list");
+
+  try {
+    const { data, error } = await db.auth.getUser();
+
+    if (error) throw error;
+
+    if (!data.user) {
+      message.textContent = "Please log in first.";
+      return;
+    }
+
+    const { data: admin, error: adminError } = await db
+      .from("admin_users")
+      .select("user_id")
+      .eq("user_id", data.user.id)
+      .maybeSingle();
+
+    if (adminError) throw adminError;
+
+    if (!admin) {
+      message.textContent =
+        "Access denied. This account is not an administrator.";
+      return;
+    }
+
+    section.hidden = false;
+    message.textContent = "Administrator access verified.";
+  } catch (error) {
+    message.textContent = "Could not verify administrator access: " +
+      error.message;
+  }
+
+  button.addEventListener("click", async function () {
+    button.disabled = true;
+    message.textContent = "Loading resellers...";
+    list.replaceChildren();
+
+    try {
+      const { data: resellers, error } = await db
+        .from("resellers")
+        .select("full_name, phone, agent_code, created_at")
+        .order("created_at", { ascending: false });
+
+      if (error) throw error;
+
+      if (!resellers || resellers.length === 0) {
+        message.textContent = "No resellers found.";
+        return;
+      }
+
+      for (const reseller of resellers) {
+        const card = document.createElement("div");
+        card.className = "card";
+
+        const name = document.createElement("p");
+        name.textContent = "Name: " + (reseller.full_name || "Not provided");
+
+        const phone = document.createElement("p");
+        phone.textContent = "Phone: " + (reseller.phone || "Not provided");
+
+        const code = document.createElement("p");
+        code.textContent = "Agent Code: " + reseller.agent_code;
+
+        card.append(name, phone, code);
+        list.appendChild(card);
+      }
+
+      message.textContent = "Resellers loaded successfully.";
+    } catch (error) {
+      message.textContent =
+        "Could not load resellers. Database permissions may need updating.";
+    } finally {
+      button.disabled = false;
+    }
+  });
+})();
+</script>
+</body>  
 </html>  
