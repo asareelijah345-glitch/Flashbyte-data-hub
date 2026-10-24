@@ -370,10 +370,10 @@ document.getElementById("logout-button")
       }
 
       message.textContent = "Resellers loaded successfully.";
-   } catch (error) {
+  } catch (error) {
   console.error("Reseller loading error:", error);
-  message.textContent =
-    "Error: " + (error.message || JSON.stringify(error));
+
+  message.textContent = "Error: " + error.message;
 } finally {
   button.disabled = false;
 }
