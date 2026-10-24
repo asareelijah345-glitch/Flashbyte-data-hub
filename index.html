@@ -368,17 +368,14 @@ document.getElementById("logout-button")
         card.append(name, phone, code);
         list.appendChild(card);
       }
-
-      message.textContent = "Resellers loaded successfully.";
-  } catch (error) {
-  console.error("Reseller loading error:", error);
-
-  message.textContent = "Error: " + error.message;
+message.textContent = "Resellers loaded successfully.";
+} catch (error) {
+console.error("Reseller loading error:", error);
+message.textContent = "Error: " + error.message;
 } finally {
-  button.disabled = false;
+button.disabled = false;
 }
-    }
-  });
+});
 })();
 </script>
 </body>  
